@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>کافی نت و لوازم تحریر نگار</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -15,8 +17,8 @@
 
     body {
       font-family: Tahoma, Arial, sans-serif;
-      background: #f5f6f8;
-      color: #222;
+      background: #f7f7ff;
+      color: #29243d;
       line-height: 1.7;
     }
 
@@ -26,86 +28,956 @@
       margin: auto;
     }
 
-    /* Header */
+
+    /* =========================
+       HEADER
+    ========================== */
+
     header {
-      background: white;
-      padding: 28px 15px 22px;
+      background: linear-gradient(
+        135deg,
+        #6c4ce8,
+        #4c8df6
+      );
+
+      color: white;
+
+      padding: 30px 15px 28px;
+
       text-align: center;
-      border-bottom: 1px solid #e8e8e8;
+
+      border-radius: 0 0 30px 30px;
+
+      box-shadow:
+        0 8px 25px rgba(92, 76, 232, 0.20);
     }
 
     .logo {
       font-size: 23px;
       font-weight: bold;
-      color: #222;
     }
 
     .subtitle {
-      margin-top: 5px;
+      margin-top: 6px;
       font-size: 13px;
-      color: #777;
+      opacity: 0.92;
     }
 
-    /* Search */
+
+    /* =========================
+       SEARCH
+    ========================== */
+
     .search-box {
-      margin: 20px 0 15px;
+      margin: 22px 0 17px;
     }
 
     .search-box input {
+
       width: 100%;
-      padding: 14px 17px;
-      border: 1px solid #ddd;
-      border-radius: 14px;
+
+      padding: 15px 18px;
+
+      border: 2px solid transparent;
+
+      border-radius: 16px;
+
       background: white;
+
       font-size: 14px;
+
+      color: #29243d;
+
       outline: none;
+
+      box-shadow:
+        0 5px 18px rgba(80, 70, 130, 0.08);
+
+      transition: 0.2s;
     }
 
     .search-box input:focus {
-      border-color: #999;
+
+      border-color: #7b61ff;
+
+      box-shadow:
+        0 6px 20px rgba(108, 76, 232, 0.14);
     }
 
-    /* Filters */
+
+    /* =========================
+       FILTER BOX
+    ========================== */
+
     .filters {
+
       background: white;
-      padding: 15px;
-      border-radius: 16px;
-      margin-bottom: 22px;
+
+      padding: 17px;
+
+      border-radius: 20px;
+
+      margin-bottom: 25px;
+
+      box-shadow:
+        0 5px 20px rgba(80, 70, 130, 0.07);
     }
 
     .filter-title {
+
       font-size: 13px;
+
       font-weight: bold;
+
+      color: #625a78;
+
       margin-bottom: 9px;
-      color: #555;
     }
 
     .filter-group {
+
       display: flex;
-      gap: 7px;
+
+      gap: 8px;
+
       overflow-x: auto;
-      padding-bottom: 5px;
-      margin-bottom: 13px;
+
+      padding-bottom: 7px;
+
+      margin-bottom: 14px;
+
+      scrollbar-width: none;
+    }
+
+    .filter-group::-webkit-scrollbar {
+      display: none;
     }
 
     .filter-group:last-child {
       margin-bottom: 0;
     }
 
+
+    /* =========================
+       FILTER BUTTONS
+    ========================== */
+
     .filter-btn {
+
       flex-shrink: 0;
-      border: 1px solid #ddd;
-      background: #fff;
-      color: #555;
-      padding: 8px 14px;
+
+      border: none;
+
+      background: #f0eff8;
+
+      color: #5d5670;
+
+      padding: 8px 15px;
+
       border-radius: 20px;
+
       cursor: pointer;
+
       font-size: 12px;
+
+      transition: 0.2s;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-1px);
     }
 
     .filter-btn.active {
-      background: #222;
+
+      background: linear-gradient(
+        135deg,
+        #6c4ce8,
+        #4c8df6
+      );
+
       color: white;
+
+      box-shadow:
+        0 4px 10px rgba(92, 76, 232, 0.22);
+    }
+
+
+    /* =========================
+       SECTION TITLE
+    ========================== */
+
+    .section-title {
+
+      font-size: 19px;
+
+      margin-bottom: 15px;
+
+      color: #30294a;
+    }
+
+
+    /* =========================
+       MOVIE CARD
+    ========================== */
+
+    .movie-card {
+
+      background: white;
+
+      border-radius: 21px;
+
+      overflow: hidden;
+
+      margin-bottom: 19px;
+
+      box-shadow:
+        0 6px 22px rgba(80, 70, 130, 0.08);
+
+      transition: 0.25s;
+    }
+
+    .movie-card:hover {
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 10px 28px rgba(80, 70, 130, 0.13);
+    }
+
+
+    /* =========================
+       POSTER
+    ========================== */
+
+    .poster {
+
+      width: 100%;
+
+      aspect-ratio: 16 / 10;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ded7ff,
+          #d8ecff
+        );
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #665b92;
+
+      font-size: 14px;
+
+      position: relative;
+    }
+
+    .poster::before {
+
+      content: "🎬";
+
+      position: absolute;
+
+      font-size: 42px;
+
+      opacity: 0.45;
+    }
+
+    .poster img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    /* =========================
+       MOVIE INFO
+    ========================== */
+
+    .movie-info {
+      padding: 17px;
+    }
+
+    .movie-title {
+
+      font-size: 18px;
+
+      font-weight: bold;
+
+      color: #30294a;
+
+      margin-bottom: 7px;
+    }
+
+    .movie-meta {
+
+      color: #6c4ce8;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      margin-bottom: 9px;
+    }
+
+    .movie-description {
+
+      font-size: 13px;
+
+      color: #777;
+
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       DETAILS BUTTON
+    ========================== */
+
+    .details-btn {
+
+      width: 100%;
+
+      padding: 12px;
+
+      border: none;
+
+      border-radius: 13px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff9f43,
+          #ff7b54
+        );
+
+      color: white;
+
+      cursor: pointer;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      box-shadow:
+        0 5px 12px rgba(255, 130, 70, 0.20);
+
+      transition: 0.2s;
+    }
+
+    .details-btn:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 16px rgba(255, 130, 70, 0.27);
+    }
+
+
+    /* =========================
+       NO RESULT
+    ========================== */
+
+    .no-result {
+
+      display: none;
+
+      text-align: center;
+
+      background: white;
+
+      border-radius: 18px;
+
+      padding: 30px 15px;
+
+      color: #777;
+
+      margin-bottom: 25px;
+
+      box-shadow:
+        0 5px 18px rgba(80, 70, 130, 0.06);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+
+      text-align: center;
+
+      padding: 32px 15px;
+
+      color: #888;
+
+      font-size: 12px;
+    }
+
+    footer div:first-child {
+
+      color: #6c4ce8;
+
+      font-weight: bold;
+
+      margin-bottom: 4px;
+    }
+
+
+    /* =========================
+       DESKTOP
+    ========================== */
+
+    @media (min-width: 700px) {
+
+      .container {
+        max-width: 900px;
+      }
+
+      .movies {
+
+        display: grid;
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 18px;
+      }
+
+      .movie-card {
+        margin-bottom: 0;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="logo">
+    کافی نت و لوازم تحریر نگار
+  </div>
+
+  <div class="subtitle">
+    کاتالوگ فیلم‌های موجود در فروشگاه
+  </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+  <!-- SEARCH -->
+
+  <div class="search-box">
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="🔍 جستجوی نام فیلم..."
+    >
+
+  </div>
+
+
+
+  <!-- FILTERS -->
+
+  <div class="filters">
+
+
+    <!-- TYPE -->
+
+    <div class="filter-title">
+      نوع محتوا
+    </div>
+
+    <div
+      class="filter-group"
+      id="typeFilters"
+    >
+
+      <button
+        class="filter-btn active"
+        data-value="همه"
+      >
+        همه
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="سینمایی"
+      >
+        🎬 سینمایی
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="سریال"
+      >
+        📺 سریال
+      </button>
+
+    </div>
+
+
+
+    <!-- COUNTRY -->
+
+    <div class="filter-title">
+      مبدأ
+    </div>
+
+    <div
+      class="filter-group"
+      id="countryFilters"
+    >
+
+      <button
+        class="filter-btn active"
+        data-value="همه"
+      >
+        همه
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="ایرانی"
+      >
+        🇮🇷 ایرانی
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="خارجی"
+      >
+        🌎 خارجی
+      </button>
+
+    </div>
+
+
+
+    <!-- GENRE -->
+
+    <div class="filter-title">
+      ژانر
+    </div>
+
+    <div
+      class="filter-group"
+      id="genreFilters"
+    >
+
+      <button
+        class="filter-btn active"
+        data-value="همه"
+      >
+        همه
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="اکشن"
+      >
+        اکشن
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="کمدی"
+      >
+        کمدی
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="درام"
+      >
+        درام
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="ترسناک"
+      >
+        ترسناک
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="عاشقانه"
+      >
+        عاشقانه
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="علمی تخیلی"
+      >
+        علمی تخیلی
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="جنایی"
+      >
+        جنایی
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="ماجراجویی"
+      >
+        ماجراجویی
+      </button>
+
+      <button
+        class="filter-btn"
+        data-value="خانوادگی"
+      >
+        خانوادگی
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- MOVIES -->
+
+  <h2 class="section-title">
+    🎬 فیلم‌های موجود
+  </h2>
+
+
+  <div
+    class="movies"
+    id="moviesContainer"
+  >
+
+
+    <!-- MOVIE 1 -->
+
+    <div
+      class="movie-card"
+      data-title="نمونه فیلم اول"
+      data-type="سینمایی"
+      data-country="خارجی"
+      data-genre="اکشن"
+    >
+
+      <div class="poster">
+        پوستر فیلم
+      </div>
+
+      <div class="movie-info">
+
+        <div class="movie-title">
+          نمونه فیلم اول
+        </div>
+
+        <div class="movie-meta">
+          اکشن • خارجی • سینمایی • 2025
+        </div>
+
+        <div class="movie-description">
+          توضیح کوتاه درباره فیلم در این قسمت قرار می‌گیرد.
+        </div>
+
+        <button class="details-btn">
+          مشاهده جزئیات
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- MOVIE 2 -->
+
+    <div
+      class="movie-card"
+      data-title="نمونه فیلم دوم"
+      data-type="سریال"
+      data-country="ایرانی"
+      data-genre="درام"
+    >
+
+      <div class="poster">
+        پوستر فیلم
+      </div>
+
+      <div class="movie-info">
+
+        <div class="movie-title">
+          نمونه فیلم دوم
+        </div>
+
+        <div class="movie-meta">
+          درام • ایرانی • سریال • 2025
+        </div>
+
+        <div class="movie-description">
+          توضیح کوتاه درباره فیلم در این قسمت قرار می‌گیرد.
+        </div>
+
+        <button class="details-btn">
+          مشاهده جزئیات
+        </button>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- NO RESULT -->
+
+  <div
+    class="no-result"
+    id="noResult"
+  >
+
+    🎬 فیلمی با این مشخصات پیدا نشد.
+
+  </div>
+
+
+</main>
+
+
+
+<footer>
+
+  <div>
+    کافی نت و لوازم تحریر نگار
+  </div>
+
+  <div>
+    کاتالوگ معرفی فیلم‌های فروشگاه
+  </div>
+
+</footer>
+
+
+
+<script>
+
+  let selectedType = "همه";
+
+  let selectedCountry = "همه";
+
+  let selectedGenre = "همه";
+
+
+  const searchInput =
+    document.getElementById(
+      "searchInput"
+    );
+
+
+  const movies =
+    document.querySelectorAll(
+      ".movie-card"
+    );
+
+
+  const noResult =
+    document.getElementById(
+      "noResult"
+    );
+
+
+
+  function filterMovies() {
+
+    const searchText =
+      searchInput.value
+        .trim()
+        .toLowerCase();
+
+
+    let visibleCount = 0;
+
+
+    movies.forEach(movie => {
+
+      const title =
+        movie.dataset.title
+          .toLowerCase();
+
+
+      const type =
+        movie.dataset.type;
+
+
+      const country =
+        movie.dataset.country;
+
+
+      const genre =
+        movie.dataset.genre;
+
+
+      const matchesSearch =
+        title.includes(searchText);
+
+
+      const matchesType =
+        selectedType === "همه" ||
+        type === selectedType;
+
+
+      const matchesCountry =
+        selectedCountry === "همه" ||
+        country === selectedCountry;
+
+
+      const matchesGenre =
+        selectedGenre === "همه" ||
+        genre === selectedGenre;
+
+
+
+      if (
+        matchesSearch &&
+        matchesType &&
+        matchesCountry &&
+        matchesGenre
+      ) {
+
+        movie.style.display =
+          "block";
+
+        visibleCount++;
+
+      }
+
+      else {
+
+        movie.style.display =
+          "none";
+
+      }
+
+    });
+
+
+    noResult.style.display =
+      visibleCount === 0
+        ? "block"
+        : "none";
+
+  }
+
+
+
+  function setupFilters(
+    containerId,
+    callback
+  ) {
+
+    const buttons =
+      document.querySelectorAll(
+        "#" +
+        containerId +
+        " .filter-btn"
+      );
+
+
+    buttons.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          buttons.forEach(btn =>
+            btn.classList.remove(
+              "active"
+            )
+          );
+
+
+          button.classList.add(
+            "active"
+          );
+
+
+          callback(
+            button.dataset.value
+          );
+
+
+          filterMovies();
+
+        }
+      );
+
+    });
+
+  }
+
+
+
+  setupFilters(
+    "typeFilters",
+    value => {
+      selectedType = value;
+    }
+  );
+
+
+  setupFilters(
+    "countryFilters",
+    value => {
+      selectedCountry = value;
+    }
+  );
+
+
+  setupFilters(
+    "genreFilters",
+    value => {
+      selectedGenre = value;
+    }
+  );
+
+
+  searchInput.addEventListener(
+    "input",
+    filterMovies
+  );
+
+</script>
+
+
+</body>
+
+</html>      color: white;
       border-color: #222;
     }
 
