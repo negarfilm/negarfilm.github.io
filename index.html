@@ -1,1 +1,462 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>کافی نت و لوازم تحریر نگار</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f5f6f8;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      background: white;
+      padding: 28px 15px 22px;
+      text-align: center;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* Search */
+    .search-box {
+      margin: 20px 0 15px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 17px;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      background: white;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: #999;
+    }
+
+    /* Filters */
+    .filters {
+      background: white;
+      padding: 15px;
+      border-radius: 16px;
+      margin-bottom: 22px;
+    }
+
+    .filter-title {
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 9px;
+      color: #555;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+      margin-bottom: 13px;
+    }
+
+    .filter-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .filter-btn {
+      flex-shrink: 0;
+      border: 1px solid #ddd;
+      background: #fff;
+      color: #555;
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .filter-btn.active {
+      background: #222;
+      color: white;
+      border-color: #222;
+    }
+
+    /* Section */
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    /* Movie Card */
+    .movie-card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    }
+
+    .poster {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .poster img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .movie-info {
+      padding: 16px;
+    }
+
+    .movie-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .movie-meta {
+      color: #777;
+      font-size: 12px;
+      margin-bottom: 9px;
+    }
+
+    .movie-description {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 14px;
+    }
+
+    .details-btn {
+      width: 100%;
+      padding: 11px;
+      border: none;
+      border-radius: 11px;
+      background: #222;
+      color: white;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    /* No Result */
+    .no-result {
+      display: none;
+      text-align: center;
+      background: white;
+      border-radius: 16px;
+      padding: 30px 15px;
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    /* Desktop */
+    @media (min-width: 700px) {
+      .container {
+        max-width: 900px;
+      }
+
+      .movies {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .movie-card {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">کافی نت و لوازم تحریر نگار</div>
+  <div class="subtitle">کاتالوگ فیلم‌های موجود در فروشگاه</div>
+</header>
+
+<main class="container">
+
+  <!-- Search -->
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="🔍 جستجوی نام فیلم..."
+    >
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+
+    <div class="filter-title">نوع محتوا</div>
+
+    <div class="filter-group" id="typeFilters">
+      <button class="filter-btn active" data-value="همه">همه</button>
+      <button class="filter-btn" data-value="سینمایی">سینمایی</button>
+      <button class="filter-btn" data-value="سریال">سریال</button>
+    </div>
+
+    <div class="filter-title">مبدأ</div>
+
+    <div class="filter-group" id="countryFilters">
+      <button class="filter-btn active" data-value="همه">همه</button>
+      <button class="filter-btn" data-value="ایرانی">ایرانی</button>
+      <button class="filter-btn" data-value="خارجی">خارجی</button>
+    </div>
+
+    <div class="filter-title">ژانر</div>
+
+    <div class="filter-group" id="genreFilters">
+      <button class="filter-btn active" data-value="همه">همه</button>
+      <button class="filter-btn" data-value="اکشن">اکشن</button>
+      <button class="filter-btn" data-value="کمدی">کمدی</button>
+      <button class="filter-btn" data-value="درام">درام</button>
+      <button class="filter-btn" data-value="ترسناک">ترسناک</button>
+      <button class="filter-btn" data-value="عاشقانه">عاشقانه</button>
+      <button class="filter-btn" data-value="علمی تخیلی">علمی تخیلی</button>
+      <button class="filter-btn" data-value="جنایی">جنایی</button>
+      <button class="filter-btn" data-value="ماجراجویی">ماجراجویی</button>
+      <button class="filter-btn" data-value="خانوادگی">خانوادگی</button>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">فیلم‌های موجود</h2>
+
+  <div class="movies" id="moviesContainer">
+
+    <!-- Movie 1 -->
+    <div
+      class="movie-card"
+      data-title="نمونه فیلم اول"
+      data-type="سینمایی"
+      data-country="خارجی"
+      data-genre="اکشن"
+    >
+
+      <div class="poster">
+        پوستر فیلم
+      </div>
+
+      <div class="movie-info">
+        <div class="movie-title">نمونه فیلم اول</div>
+
+        <div class="movie-meta">
+          اکشن • خارجی • سینمایی • 2025
+        </div>
+
+        <div class="movie-description">
+          توضیح کوتاه درباره فیلم در این قسمت قرار می‌گیرد.
+        </div>
+
+        <button class="details-btn">
+          مشاهده جزئیات
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Movie 2 -->
+    <div
+      class="movie-card"
+      data-title="نمونه فیلم دوم"
+      data-type="سریال"
+      data-country="ایرانی"
+      data-genre="درام"
+    >
+
+      <div class="poster">
+        پوستر فیلم
+      </div>
+
+      <div class="movie-info">
+        <div class="movie-title">نمونه فیلم دوم</div>
+
+        <div class="movie-meta">
+          درام • ایرانی • سریال • 2025
+        </div>
+
+        <div class="movie-description">
+          توضیح کوتاه درباره فیلم در این قسمت قرار می‌گیرد.
+        </div>
+
+        <button class="details-btn">
+          مشاهده جزئیات
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="no-result" id="noResult">
+    🎬 فیلمی با این مشخصات پیدا نشد.
+  </div>
+
+</main>
+
+<footer>
+  <div>کافی نت و لوازم تحریر نگار</div>
+  <div>کاتالوگ معرفی فیلم‌های فروشگاه</div>
+</footer>
+
+
+<script>
+
+  let selectedType = "همه";
+  let selectedCountry = "همه";
+  let selectedGenre = "همه";
+
+  const searchInput = document.getElementById("searchInput");
+  const movies = document.querySelectorAll(".movie-card");
+  const noResult = document.getElementById("noResult");
+
+  function filterMovies() {
+
+    const searchText = searchInput.value.trim().toLowerCase();
+
+    let visibleCount = 0;
+
+    movies.forEach(movie => {
+
+      const title = movie.dataset.title.toLowerCase();
+      const type = movie.dataset.type;
+      const country = movie.dataset.country;
+      const genre = movie.dataset.genre;
+
+      const matchesSearch =
+        title.includes(searchText);
+
+      const matchesType =
+        selectedType === "همه" ||
+        type === selectedType;
+
+      const matchesCountry =
+        selectedCountry === "همه" ||
+        country === selectedCountry;
+
+      const matchesGenre =
+        selectedGenre === "همه" ||
+        genre === selectedGenre;
+
+      if (
+        matchesSearch &&
+        matchesType &&
+        matchesCountry &&
+        matchesGenre
+      ) {
+
+        movie.style.display = "block";
+        visibleCount++;
+
+      } else {
+
+        movie.style.display = "none";
+
+      }
+
+    });
+
+    noResult.style.display =
+      visibleCount === 0 ? "block" : "none";
+  }
+
+
+  function setupFilters(containerId, callback) {
+
+    const buttons =
+      document.querySelectorAll(
+        "#" + containerId + " .filter-btn"
+      );
+
+    buttons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        buttons.forEach(btn =>
+          btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        callback(button.dataset.value);
+
+        filterMovies();
+
+      });
+
+    });
+
+  }
+
+
+  setupFilters("typeFilters", value => {
+    selectedType = value;
+  });
+
+
+  setupFilters("countryFilters", value => {
+    selectedCountry = value;
+  });
+
+
+  setupFilters("genreFilters", value => {
+    selectedGenre = value;
+  });
+
+
+  searchInput.addEventListener(
+    "input",
+    filterMovies
+  );
+
+</script>
+
+</body>
+  </html>
