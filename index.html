@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>کافی نت و لوازم تحریر نگار</title>
+
 
 <style>
 
@@ -27,15 +32,25 @@ max-width:700px;
 margin:auto;
 }
 
+
 /* HEADER */
 
 header{
-background:linear-gradient(135deg,#7c4dff,#00a8ff);
+background:linear-gradient(
+135deg,
+#7c4dff,
+#00a8ff
+);
+
 color:white;
 text-align:center;
+
 padding:32px 15px;
+
 border-radius:0 0 30px 30px;
-box-shadow:0 8px 25px rgba(80,70,180,.25);
+
+box-shadow:
+0 8px 25px rgba(80,70,180,.25);
 }
 
 .logo{
@@ -49,6 +64,7 @@ margin-top:6px;
 opacity:.9;
 }
 
+
 /* SEARCH */
 
 .search{
@@ -56,43 +72,69 @@ margin:22px 0 16px;
 }
 
 .search input{
+
 width:100%;
+
 padding:15px 18px;
+
 border:2px solid #eee;
+
 border-radius:16px;
+
 font-size:14px;
+
 outline:none;
+
 background:white;
-box-shadow:0 5px 18px rgba(0,0,0,.06);
+
+box-shadow:
+0 5px 18px rgba(0,0,0,.06);
 }
 
 .search input:focus{
 border-color:#7c4dff;
 }
 
-/* FILTER */
+
+/* FILTER BOX */
 
 .filters{
+
 background:white;
+
 padding:17px;
+
 border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.06);
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.06);
+
 margin-bottom:25px;
 }
 
 .filter-title{
+
 font-size:13px;
+
 font-weight:bold;
+
 margin-bottom:8px;
+
 color:#625778;
 }
 
 .filter-group{
+
 display:flex;
+
 gap:8px;
+
 overflow-x:auto;
+
 padding-bottom:8px;
+
 margin-bottom:13px;
+
 scrollbar-width:none;
 }
 
@@ -100,12 +142,873 @@ scrollbar-width:none;
 display:none;
 }
 
+
+/* FILTER BUTTON */
+
 .filter-btn{
+
 border:0;
+
 background:#f0ecff;
+
 color:#625778;
+
 padding:9px 15px;
+
 border-radius:20px;
+
+white-space:nowrap;
+
+font-size:12px;
+
+cursor:pointer;
+
+transition:.2s;
+}
+
+.filter-btn:hover{
+transform:translateY(-1px);
+}
+
+.filter-btn.active{
+
+background:
+linear-gradient(
+135deg,
+#7c4dff,
+#00a8ff
+);
+
+color:white;
+
+box-shadow:
+0 4px 10px rgba(92,76,232,.22);
+}
+
+
+/* TITLE */
+
+.section-title{
+
+font-size:19px;
+
+margin-bottom:15px;
+
+}
+
+
+/* MOVIE */
+
+.movie-card{
+
+background:white;
+
+border-radius:22px;
+
+overflow:hidden;
+
+margin-bottom:20px;
+
+box-shadow:
+0 6px 22px rgba(0,0,0,.08);
+
+transition:.25s;
+}
+
+.movie-card:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 10px 28px rgba(0,0,0,.12);
+}
+
+
+/* POSTER */
+
+.poster{
+
+height:330px;
+
+background:
+linear-gradient(
+135deg,
+#ffd6e7,
+#d8e7ff
+);
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:18px;
+
+color:#705d91;
+}
+
+.poster img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+}
+
+
+/* MOVIE INFO */
+
+.movie-info{
+padding:17px;
+}
+
+.movie-title{
+
+font-size:18px;
+
+font-weight:bold;
+
+margin-bottom:6px;
+}
+
+.movie-meta{
+
+font-size:12px;
+
+font-weight:bold;
+
+color:#7c4dff;
+
+margin-bottom:9px;
+}
+
+.movie-description{
+
+font-size:13px;
+
+color:#777;
+
+margin-bottom:15px;
+}
+
+
+/* DETAILS BUTTON */
+
+.details-btn{
+
+width:100%;
+
+padding:12px;
+
+border:0;
+
+border-radius:13px;
+
+background:
+linear-gradient(
+135deg,
+#ff9f43,
+#ff6b6b
+);
+
+color:white;
+
+font-size:13px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.2s;
+}
+
+.details-btn:hover{
+
+transform:translateY(-2px);
+}
+
+
+/* NO RESULT */
+
+.no-result{
+
+display:none;
+
+background:white;
+
+padding:30px;
+
+border-radius:18px;
+
+text-align:center;
+
+color:#777;
+}
+
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+
+padding:35px 10px;
+
+font-size:12px;
+
+color:#888;
+}
+
+footer strong{
+
+display:block;
+
+color:#7c4dff;
+
+margin-bottom:5px;
+}
+
+
+/* DESKTOP */
+
+@media(min-width:700px){
+
+.container{
+max-width:900px;
+}
+
+.movies{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:18px;
+}
+
+.movie-card{
+margin-bottom:0;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="logo">
+کافی نت و لوازم تحریر نگار
+</div>
+
+<div class="subtitle">
+کاتالوگ فیلم‌های موجود در فروشگاه
+</div>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- SEARCH -->
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="🔍 جستجوی نام فیلم..."
+>
+
+</div>
+
+
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+
+<!-- SORT -->
+
+<div class="filter-title">
+نمایش
+</div>
+
+<div
+class="filter-group"
+id="sort"
+>
+
+<button
+class="filter-btn active"
+data-value="all"
+>
+همه
+</button>
+
+<button
+class="filter-btn"
+data-value="newest"
+>
+✨ جدیدترین‌ها
+</button>
+
+</div>
+
+
+
+<!-- TYPE -->
+
+<div class="filter-title">
+نوع محتوا
+</div>
+
+<div
+class="filter-group"
+id="type"
+>
+
+<button
+class="filter-btn active"
+data-value="همه"
+>
+همه
+</button>
+
+<button
+class="filter-btn"
+data-value="سینمایی"
+>
+🎬 سینمایی
+</button>
+
+<button
+class="filter-btn"
+data-value="سریال"
+>
+📺 سریال
+</button>
+
+</div>
+
+
+
+<!-- COUNTRY -->
+
+<div class="filter-title">
+مبدأ
+</div>
+
+<div
+class="filter-group"
+id="country"
+>
+
+<button
+class="filter-btn active"
+data-value="همه"
+>
+همه
+</button>
+
+<button
+class="filter-btn"
+data-value="ایرانی"
+>
+🇮🇷 ایرانی
+</button>
+
+<button
+class="filter-btn"
+data-value="خارجی"
+>
+🌎 خارجی
+</button>
+
+</div>
+
+
+
+<!-- GENRE -->
+
+<div class="filter-title">
+ژانر
+</div>
+
+<div
+class="filter-group"
+id="genre"
+>
+
+<button
+class="filter-btn active"
+data-value="همه"
+>
+همه
+</button>
+
+<button
+class="filter-btn"
+data-value="اکشن"
+>
+اکشن
+</button>
+
+<button
+class="filter-btn"
+data-value="کمدی"
+>
+کمدی
+</button>
+
+<button
+class="filter-btn"
+data-value="درام"
+>
+درام
+</button>
+
+<button
+class="filter-btn"
+data-value="ترسناک"
+>
+ترسناک
+</button>
+
+<button
+class="filter-btn"
+data-value="عاشقانه"
+>
+عاشقانه
+</button>
+
+<button
+class="filter-btn"
+data-value="علمی تخیلی"
+>
+علمی تخیلی
+</button>
+
+<button
+class="filter-btn"
+data-value="جنایی"
+>
+جنایی
+</button>
+
+<button
+class="filter-btn"
+data-value="ماجراجویی"
+>
+ماجراجویی
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- MOVIES TITLE -->
+
+<h2 class="section-title">
+🎬 فیلم‌های موجود
+</h2>
+
+
+
+<!-- MOVIES -->
+
+<div id="movies">
+
+
+
+<!-- MOVIE 1 -->
+
+<div
+class="movie-card"
+
+data-title="نمونه فیلم اول"
+
+data-type="سینمایی"
+
+data-country="خارجی"
+
+data-genre="اکشن"
+
+data-added="2026-09-14"
+>
+
+<div class="poster">
+🎬 پوستر فیلم
+</div>
+
+<div class="movie-info">
+
+<div class="movie-title">
+نمونه فیلم اول
+</div>
+
+<div class="movie-meta">
+اکشن • خارجی • سینمایی • 2025
+</div>
+
+<div class="movie-description">
+توضیح کوتاه درباره این فیلم در این قسمت قرار می‌گیرد.
+</div>
+
+<button class="details-btn">
+مشاهده جزئیات
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- MOVIE 2 -->
+
+<div
+class="movie-card"
+
+data-title="نمونه فیلم دوم"
+
+data-type="سریال"
+
+data-country="ایرانی"
+
+data-genre="درام"
+
+data-added="2026-09-10"
+>
+
+<div class="poster">
+📺 پوستر سریال
+</div>
+
+<div class="movie-info">
+
+<div class="movie-title">
+نمونه فیلم دوم
+</div>
+
+<div class="movie-meta">
+درام • ایرانی • سریال • 2025
+</div>
+
+<div class="movie-description">
+توضیح کوتاه درباره این سریال در این قسمت قرار می‌گیرد.
+</div>
+
+<button class="details-btn">
+مشاهده جزئیات
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- NO RESULT -->
+
+<div
+class="no-result"
+id="noResult"
+>
+
+🎬 فیلمی با این مشخصات پیدا نشد.
+
+</div>
+
+
+</main>
+
+
+
+<footer>
+
+<strong>
+کافی نت و لوازم تحریر نگار
+</strong>
+
+کاتالوگ معرفی فیلم‌های فروشگاه
+
+</footer>
+
+
+
+<script>
+
+
+let selectedType="همه";
+
+let selectedCountry="همه";
+
+let selectedGenre="همه";
+
+let selectedSort="all";
+
+
+const search=
+document.getElementById("search");
+
+
+const moviesContainer=
+document.getElementById("movies");
+
+
+const noResult=
+document.getElementById("noResult");
+
+
+const cards=
+Array.from(
+document.querySelectorAll(".movie-card")
+);
+
+
+
+/* FILTER */
+
+function filterMovies(){
+
+const text=
+search.value
+.toLowerCase()
+.trim();
+
+
+let visibleCards=[];
+
+
+cards.forEach(card=>{
+
+const title=
+card.dataset.title
+.toLowerCase();
+
+
+const type=
+card.dataset.type;
+
+
+const country=
+card.dataset.country;
+
+
+const genre=
+card.dataset.genre;
+
+
+const matchesSearch=
+title.includes(text);
+
+
+const matchesType=
+selectedType==="همه" ||
+type===selectedType;
+
+
+const matchesCountry=
+selectedCountry==="همه" ||
+country===selectedCountry;
+
+
+const matchesGenre=
+selectedGenre==="همه" ||
+genre===selectedGenre;
+
+
+const show=
+matchesSearch &&
+matchesType &&
+matchesCountry &&
+matchesGenre;
+
+
+if(show){
+
+card.style.display="block";
+
+visibleCards.push(card);
+
+}else{
+
+card.style.display="none";
+
+}
+
+});
+
+
+
+/* NEWEST */
+
+if(selectedSort==="newest"){
+
+visibleCards.sort((a,b)=>{
+
+const dateA=
+new Date(a.dataset.added);
+
+const dateB=
+new Date(b.dataset.added);
+
+return dateB-dateA;
+
+});
+
+
+visibleCards.forEach(card=>{
+
+moviesContainer.appendChild(card);
+
+});
+
+}
+
+
+
+noResult.style.display=
+visibleCards.length===0
+?"block"
+:"none";
+
+}
+
+
+
+/* NORMAL FILTERS */
+
+function setupFilter(
+id,
+callback
+){
+
+document
+.querySelectorAll(
+"#"+id+" .filter-btn"
+)
+.forEach(button=>{
+
+button.addEventListener(
+"click",
+()=>{
+
+
+document
+.querySelectorAll(
+"#"+id+" .filter-btn"
+)
+.forEach(btn=>{
+
+btn.classList.remove(
+"active"
+);
+
+});
+
+
+button.classList.add(
+"active"
+);
+
+
+callback(
+button.dataset.value
+);
+
+
+filterMovies();
+
+});
+
+});
+
+}
+
+
+
+/* SORT */
+
+setupFilter(
+"sort",
+value=>{
+
+selectedSort=value;
+
+}
+);
+
+
+/* TYPE */
+
+setupFilter(
+"type",
+value=>{
+
+selectedType=value;
+
+}
+);
+
+
+/* COUNTRY */
+
+setupFilter(
+"country",
+value=>{
+
+selectedCountry=value;
+
+}
+);
+
+
+/* GENRE */
+
+setupFilter(
+"genre",
+value=>{
+
+selectedGenre=value;
+
+}
+);
+
+
+/* SEARCH */
+
+search.addEventListener(
+"input",
+filterMovies
+);
+
+
+</script>
+
+
+</body>
+
+</html>border-radius:20px;
 white-space:nowrap;
 font-size:12px;
 }
