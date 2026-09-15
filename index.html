@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,816 +9,759 @@
 
 <style>
 
-/* ===== RESET ===== */
-
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-  font-family:Tahoma,Arial,sans-serif;
-  background:#fff8f3;
-  color:#30264d;
-  line-height:1.8;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#fff8f3;
+    color:#30264d;
+    line-height:1.8;
+}
+
+button,
+input{
+    font-family:inherit;
 }
 
 .container{
-  width:92%;
-  max-width:700px;
-  margin:auto;
+    width:92%;
+    max-width:850px;
+    margin:auto;
 }
 
 
-/* ===== HEADER ===== */
+/* HEADER */
 
 header{
-  background:linear-gradient(135deg,#7c4dff,#00a8ff);
-  color:white;
-  text-align:center;
-  padding:30px 15px;
-  border-radius:0 0 30px 30px;
-  box-shadow:0 8px 25px rgba(80,70,180,.22);
+    background:linear-gradient(135deg,#7c4dff,#00a8ff);
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+    border-radius:0 0 28px 28px;
+    box-shadow:0 7px 22px rgba(80,70,180,.22);
 }
 
 .logo{
-  font-size:21px;
-  font-weight:bold;
+    font-size:21px;
+    font-weight:bold;
 }
 
 .subtitle{
-  font-size:12px;
-  margin-top:5px;
-  opacity:.9;
+    font-size:12px;
+    opacity:.9;
+    margin-top:5px;
 }
 
 
-/* ===== SEARCH ===== */
+/* SEARCH */
 
 .search{
-  margin:20px 0 15px;
+    margin:20px 0 15px;
 }
 
 .search input{
-  width:100%;
-  padding:14px 17px;
-  border:2px solid #eee;
-  border-radius:15px;
-  background:white;
-  outline:none;
-  font-family:inherit;
-  font-size:14px;
-  box-shadow:0 4px 15px rgba(0,0,0,.05);
+    width:100%;
+    border:2px solid #eee;
+    background:white;
+    border-radius:16px;
+    padding:14px 17px;
+    outline:none;
+    font-size:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
 }
 
 .search input:focus{
-  border-color:#7c4dff;
+    border-color:#7c4dff;
 }
 
 
-/* ===== FILTERS ===== */
+/* FILTERS */
 
 .filters{
-  background:white;
-  padding:16px;
-  border-radius:20px;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
-  margin-bottom:22px;
+    background:white;
+    padding:16px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+    margin-bottom:22px;
 }
 
 .filter-title{
-  font-size:12px;
-  font-weight:bold;
-  color:#625778;
-  margin-bottom:7px;
+    font-size:12px;
+    font-weight:bold;
+    color:#625778;
+    margin-bottom:7px;
 }
 
 .filter-group{
-  display:flex;
-  gap:7px;
-  overflow-x:auto;
-  padding-bottom:7px;
-  margin-bottom:12px;
-  scrollbar-width:none;
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    padding-bottom:7px;
+    margin-bottom:12px;
+    scrollbar-width:none;
 }
 
 .filter-group::-webkit-scrollbar{
-  display:none;
+    display:none;
 }
 
 .filter-btn{
-  border:0;
-  background:#f0ecff;
-  color:#625778;
-  padding:8px 14px;
-  border-radius:20px;
-  white-space:nowrap;
-  font-family:inherit;
-  font-size:11px;
-  cursor:pointer;
+    border:0;
+    background:#f0ecff;
+    color:#625778;
+    padding:8px 14px;
+    border-radius:20px;
+    white-space:nowrap;
+    font-size:11px;
+    cursor:pointer;
 }
 
 .filter-btn.active{
-  background:linear-gradient(135deg,#7c4dff,#00a8ff);
-  color:white;
+    background:linear-gradient(135deg,#7c4dff,#00a8ff);
+    color:white;
 }
 
 
-/* ===== SECTION TITLE ===== */
+/* TITLE */
 
 .section-title{
-  font-size:18px;
-  margin-bottom:14px;
+    font-size:18px;
+    margin-bottom:14px;
 }
 
 
-/* ===== MOVIES ===== */
+/* MOVIES */
 
 .movies{
-  display:block;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
 }
 
 .movie-card{
-  background:white;
-  border-radius:21px;
-  overflow:hidden;
-  margin-bottom:18px;
-  box-shadow:0 5px 20px rgba(0,0,0,.07);
+    background:white;
+    border-radius:21px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
 .poster{
-  height:320px;
-  background:linear-gradient(135deg,#ffd6e7,#d8e7ff);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#705d91;
-  font-size:18px;
-  overflow:hidden;
+    height:320px;
+    background:linear-gradient(135deg,#ffd6e7,#d8e7ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#705d91;
+    font-size:18px;
+    overflow:hidden;
 }
 
 .poster img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .movie-info{
-  padding:16px;
+    padding:16px;
 }
 
 .movie-title{
-  font-size:17px;
-  font-weight:bold;
-  margin-bottom:5px;
+    font-size:17px;
+    font-weight:bold;
+    margin-bottom:5px;
 }
 
 .movie-meta{
-  color:#7c4dff;
-  font-size:11px;
-  font-weight:bold;
-  margin-bottom:7px;
+    color:#7c4dff;
+    font-size:11px;
+    font-weight:bold;
+    margin-bottom:7px;
 }
 
 .movie-description{
-  color:#777;
-  font-size:12px;
-  margin-bottom:13px;
+    color:#777;
+    font-size:12px;
+    margin-bottom:13px;
 }
 
 .details-btn{
-  width:100%;
-  border:0;
-  border-radius:12px;
-  padding:11px;
-  background:linear-gradient(135deg,#ff9f43,#ff6b6b);
-  color:white;
-  font-family:inherit;
-  font-size:12px;
-  font-weight:bold;
-  cursor:pointer;
+    width:100%;
+    border:0;
+    border-radius:12px;
+    padding:11px;
+    background:linear-gradient(135deg,#ff9f43,#ff6b6b);
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 
-/* ===== NO RESULT ===== */
+/* NO RESULT */
 
 .no-result{
-  display:none;
-  background:white;
-  padding:28px;
-  border-radius:18px;
-  text-align:center;
-  color:#777;
+    display:none;
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    text-align:center;
+    color:#777;
 }
 
 
-/* ===== DETAILS ===== */
+/* DETAILS */
 
 #detailsPage{
-  display:none;
-  padding-top:18px;
-  padding-bottom:30px;
+    display:none;
+    padding-top:18px;
+    padding-bottom:30px;
 }
 
 .back-btn{
-  border:0;
-  background:white;
-  color:#7c4dff;
-  padding:9px 15px;
-  border-radius:12px;
-  font-family:inherit;
-  font-size:12px;
-  font-weight:bold;
-  margin-bottom:15px;
-  box-shadow:0 4px 14px rgba(0,0,0,.06);
-  cursor:pointer;
+    border:0;
+    background:white;
+    color:#7c4dff;
+    padding:9px 15px;
+    border-radius:12px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:15px;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+    cursor:pointer;
 }
 
 .details-card{
-  background:white;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 6px 22px rgba(0,0,0,.08);
+    background:white;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 6px 22px rgba(0,0,0,.08);
 }
 
 .details-poster{
-  height:390px;
-  background:linear-gradient(135deg,#ffd6e7,#d8e7ff);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#705d91;
-  font-size:18px;
-  overflow:hidden;
+    height:390px;
+    background:linear-gradient(135deg,#ffd6e7,#d8e7ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#705d91;
+    font-size:18px;
+    overflow:hidden;
 }
 
 .details-poster img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .details-content{
-  padding:19px;
+    padding:19px;
 }
 
 .details-title{
-  font-size:22px;
-  margin-bottom:10px;
+    font-size:22px;
+    margin-bottom:10px;
 }
 
 .tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-bottom:18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:18px;
 }
 
 .tag{
-  background:#f0ecff;
-  color:#6d50d9;
-  padding:5px 10px;
-  border-radius:14px;
-  font-size:10px;
-  font-weight:bold;
+    background:#f0ecff;
+    color:#6d50d9;
+    padding:5px 10px;
+    border-radius:14px;
+    font-size:10px;
+    font-weight:bold;
 }
 
 .details-info{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:9px;
-  margin-bottom:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-bottom:20px;
 }
 
 .info-box{
-  background:#f8f6ff;
-  padding:10px;
-  border-radius:12px;
+    background:#f8f6ff;
+    padding:10px;
+    border-radius:12px;
 }
 
 .info-label{
-  display:block;
-  color:#999;
-  font-size:9px;
+    display:block;
+    color:#999;
+    font-size:9px;
 }
 
 .info-value{
-  color:#43356b;
-  font-size:12px;
-  font-weight:bold;
+    color:#43356b;
+    font-size:12px;
+    font-weight:bold;
 }
 
 .details-heading{
-  font-size:15px;
-  margin-bottom:6px;
+    font-size:15px;
+    margin-bottom:6px;
 }
 
 .details-text{
-  color:#666;
-  font-size:12px;
+    color:#666;
+    font-size:12px;
 }
 
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 footer{
-  text-align:center;
-  color:#888;
-  font-size:11px;
-  padding:30px 10px;
+    text-align:center;
+    color:#888;
+    font-size:11px;
+    padding:30px 10px;
 }
 
 footer strong{
-  display:block;
-  color:#7c4dff;
-  margin-bottom:4px;
+    display:block;
+    color:#7c4dff;
+    margin-bottom:4px;
 }
 
 
-/* ===== DESKTOP ===== */
+/* DESKTOP */
 
 @media(min-width:700px){
 
-  .container{
-    max-width:900px;
-  }
-
-  .movies{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-  }
-
-  .movie-card{
-    margin-bottom:0;
-  }
+    .movies{
+        grid-template-columns:repeat(2,1fr);
+    }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
-  <div class="logo">
-    کافی نت و لوازم تحریر نگار
-  </div>
+    <div class="logo">
+        کافی نت و لوازم تحریر نگار
+    </div>
 
-  <div class="subtitle">
-    کاتالوگ فیلم‌های موجود در فروشگاه
-  </div>
+    <div class="subtitle">
+        کاتالوگ فیلم‌های موجود در فروشگاه
+    </div>
 
 </header>
 
 
 
-<!-- =========================
-     HOME
-========================= -->
-
 <main class="container" id="homePage">
 
 
-  <!-- SEARCH -->
+    <div class="search">
 
-  <div class="search">
-
-    <input
-      type="text"
-      id="search"
-      placeholder="🔍 جستجوی نام فیلم..."
-    >
-
-  </div>
-
-
-
-  <!-- FILTERS -->
-
-  <div class="filters">
-
-
-    <div class="filter-title">
-      نمایش
-    </div>
-
-    <div class="filter-group" id="sort">
-
-      <button
-        class="filter-btn active"
-        data-value="all"
-      >
-        همه
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="newest"
-      >
-        ✨ جدیدترین‌ها
-      </button>
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 جستجوی نام فیلم..."
+        >
 
     </div>
 
 
 
-    <div class="filter-title">
-      نوع محتوا
+    <div class="filters">
+
+
+        <div class="filter-title">
+            نمایش
+        </div>
+
+        <div class="filter-group" id="sort">
+
+            <button
+                class="filter-btn active"
+                data-value="all">
+                همه
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="newest">
+                ✨ جدیدترین‌ها
+            </button>
+
+        </div>
+
+
+
+        <div class="filter-title">
+            نوع محتوا
+        </div>
+
+        <div class="filter-group" id="type">
+
+            <button
+                class="filter-btn active"
+                data-value="همه">
+                همه
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="سینمایی">
+                🎬 سینمایی
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="سریال">
+                📺 سریال
+            </button>
+
+        </div>
+
+
+
+        <div class="filter-title">
+            مبدأ
+        </div>
+
+        <div class="filter-group" id="country">
+
+            <button
+                class="filter-btn active"
+                data-value="همه">
+                همه
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="ایرانی">
+                🇮🇷 ایرانی
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="خارجی">
+                🌎 خارجی
+            </button>
+
+        </div>
+
+
+
+        <div class="filter-title">
+            ژانر
+        </div>
+
+        <div class="filter-group" id="genre">
+
+            <button
+                class="filter-btn active"
+                data-value="همه">
+                همه
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="اکشن">
+                اکشن
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="کمدی">
+                کمدی
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="درام">
+                درام
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="ترسناک">
+                ترسناک
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="عاشقانه">
+                عاشقانه
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="علمی تخیلی">
+                علمی تخیلی
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="جنایی">
+                جنایی
+            </button>
+
+            <button
+                class="filter-btn"
+                data-value="ماجراجویی">
+                ماجراجویی
+            </button>
+
+        </div>
+
     </div>
 
-    <div class="filter-group" id="type">
 
-      <button
-        class="filter-btn active"
-        data-value="همه"
-      >
-        همه
-      </button>
 
-      <button
-        class="filter-btn"
-        data-value="سینمایی"
-      >
-        🎬 سینمایی
-      </button>
+    <h2 class="section-title">
+        🎬 فیلم‌های موجود
+    </h2>
 
-      <button
-        class="filter-btn"
-        data-value="سریال"
-      >
-        📺 سریال
-      </button>
+
+
+    <div id="movies" class="movies">
+
+
+        <!-- فیلم نمونه -->
+
+        <article
+            class="movie-card"
+
+            data-title="نمونه فیلم اول"
+            data-type="سینمایی"
+            data-country="خارجی"
+            data-genre="اکشن"
+            data-year="2025"
+            data-duration="120 دقیقه"
+            data-added="2026-09-14"
+            data-description="این یک فیلم نمونه است. بعداً اطلاعات واقعی فیلم را جایگزین این اطلاعات می‌کنیم."
+        >
+
+            <div class="poster">
+                🎬 پوستر فیلم
+            </div>
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+                    نمونه فیلم اول
+                </div>
+
+                <div class="movie-meta">
+                    اکشن • خارجی • سینمایی • 2025
+                </div>
+
+                <div class="movie-description">
+                    توضیح کوتاه درباره این فیلم.
+                </div>
+
+                <button class="details-btn">
+                    مشاهده جزئیات
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- سریال نمونه -->
+
+        <article
+            class="movie-card"
+
+            data-title="نمونه سریال دوم"
+            data-type="سریال"
+            data-country="ایرانی"
+            data-genre="درام"
+            data-year="2025"
+            data-duration="10 قسمت"
+            data-added="2026-09-10"
+            data-description="این یک سریال نمونه است. بعداً اطلاعات واقعی سریال را جایگزین این اطلاعات می‌کنیم."
+        >
+
+            <div class="poster">
+                📺 پوستر سریال
+            </div>
+
+            <div class="movie-info">
+
+                <div class="movie-title">
+                    نمونه سریال دوم
+                </div>
+
+                <div class="movie-meta">
+                    درام • ایرانی • سریال • 2025
+                </div>
+
+                <div class="movie-description">
+                    توضیح کوتاه درباره این سریال.
+                </div>
+
+                <button class="details-btn">
+                    مشاهده جزئیات
+                </button>
+
+            </div>
+
+        </article>
+
 
     </div>
 
 
-
-    <div class="filter-title">
-      مبدأ
-    </div>
-
-    <div class="filter-group" id="country">
-
-      <button
-        class="filter-btn active"
-        data-value="همه"
-      >
-        همه
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="ایرانی"
-      >
-        🇮🇷 ایرانی
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="خارجی"
-      >
-        🌎 خارجی
-      </button>
-
-    </div>
-
-
-
-    <div class="filter-title">
-      ژانر
-    </div>
-
-    <div class="filter-group" id="genre">
-
-      <button
-        class="filter-btn active"
-        data-value="همه"
-      >
-        همه
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="اکشن"
-      >
-        اکشن
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="کمدی"
-      >
-        کمدی
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="درام"
-      >
-        درام
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="ترسناک"
-      >
-        ترسناک
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="عاشقانه"
-      >
-        عاشقانه
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="علمی تخیلی"
-      >
-        علمی تخیلی
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="جنایی"
-      >
-        جنایی
-      </button>
-
-      <button
-        class="filter-btn"
-        data-value="ماجراجویی"
-      >
-        ماجراجویی
-      </button>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- MOVIES -->
-
-  <h2 class="section-title">
-    🎬 فیلم‌های موجود
-  </h2>
-
-
-  <div id="movies" class="movies">
-
-
-    <!-- ===== MOVIE 1 ===== -->
 
     <div
-      class="movie-card"
-
-      data-title="نمونه فیلم اول"
-      data-type="سینمایی"
-      data-country="خارجی"
-      data-genre="اکشن"
-      data-year="2025"
-      data-duration="120 دقیقه"
-      data-added="2026-09-14"
-
-      data-description="این متن توضیحات کامل فیلم اول است. در این قسمت می‌توان داستان و معرفی کامل فیلم را قرار داد."
+        class="no-result"
+        id="noResult"
     >
-
-      <div class="poster">
-        🎬 پوستر فیلم
-      </div>
-
-      <div class="movie-info">
-
-        <div class="movie-title">
-          نمونه فیلم اول
-        </div>
-
-        <div class="movie-meta">
-          اکشن • خارجی • سینمایی • 2025
-        </div>
-
-        <div class="movie-description">
-          توضیح کوتاه درباره این فیلم در این قسمت قرار می‌گیرد.
-        </div>
-
-        <button class="details-btn">
-          مشاهده جزئیات
-        </button>
-
-      </div>
-
+        🎬 فیلمی با این مشخصات پیدا نشد.
     </div>
-
-
-
-    <!-- ===== MOVIE 2 ===== -->
-
-    <div
-      class="movie-card"
-
-      data-title="نمونه فیلم دوم"
-      data-type="سریال"
-      data-country="ایرانی"
-      data-genre="درام"
-      data-year="2025"
-      data-duration="10 قسمت"
-      data-added="2026-09-10"
-
-      data-description="این متن توضیحات کامل سریال دوم است. در این قسمت می‌توان داستان و معرفی کامل سریال را قرار داد."
-    >
-
-      <div class="poster">
-        📺 پوستر سریال
-      </div>
-
-      <div class="movie-info">
-
-        <div class="movie-title">
-          نمونه فیلم دوم
-        </div>
-
-        <div class="movie-meta">
-          درام • ایرانی • سریال • 2025
-        </div>
-
-        <div class="movie-description">
-          توضیح کوتاه درباره این سریال در این قسمت قرار می‌گیرد.
-        </div>
-
-        <button class="details-btn">
-          مشاهده جزئیات
-        </button>
-
-      </div>
-
-    </div>
-
-
-  </div>
-
-
-  <div class="no-result" id="noResult">
-    🎬 فیلمی با این مشخصات پیدا نشد.
-  </div>
 
 
 </main>
 
 
 
-<!-- =========================
-     DETAILS PAGE
-========================= -->
-
 <section
-  class="container"
-  id="detailsPage"
+    class="container"
+    id="detailsPage"
 >
 
 
-  <button
-    class="back-btn"
-    id="backButton"
-  >
-    ← بازگشت به فیلم‌ها
-  </button>
-
-
-
-  <div class="details-card">
-
-
-    <div
-      class="details-poster"
-      id="detailsPoster"
+    <button
+        class="back-btn"
+        id="backButton"
     >
-      🎬 پوستر فیلم
-    </div>
+        ← بازگشت به فیلم‌ها
+    </button>
 
 
 
-    <div class="details-content">
+    <div class="details-card">
 
 
-      <h1
-        class="details-title"
-        id="detailsTitle"
-      >
-        نام فیلم
-      </h1>
-
-
-
-      <div class="tags">
-
-        <span
-          class="tag"
-          id="detailsType"
+        <div
+            class="details-poster"
+            id="detailsPoster"
         >
-          سینمایی
-        </span>
-
-        <span
-          class="tag"
-          id="detailsCountry"
-        >
-          خارجی
-        </span>
-
-        <span
-          class="tag"
-          id="detailsGenre"
-        >
-          اکشن
-        </span>
-
-      </div>
-
-
-
-      <div class="details-info">
-
-
-        <div class="info-box">
-
-          <span class="info-label">
-            سال تولید
-          </span>
-
-          <span
-            class="info-value"
-            id="detailsYear"
-          >
-            2025
-          </span>
-
+            🎬 پوستر فیلم
         </div>
 
 
 
-        <div class="info-box">
+        <div class="details-content">
 
-          <span class="info-label">
-            مدت / تعداد قسمت
-          </span>
 
-          <span
-            class="info-value"
-            id="detailsDuration"
-          >
-            120 دقیقه
-          </span>
+            <h1
+                class="details-title"
+                id="detailsTitle">
+                نام فیلم
+            </h1>
+
+
+
+            <div class="tags">
+
+                <span
+                    class="tag"
+                    id="detailsType">
+                    سینمایی
+                </span>
+
+                <span
+                    class="tag"
+                    id="detailsCountry">
+                    خارجی
+                </span>
+
+                <span
+                    class="tag"
+                    id="detailsGenre">
+                    اکشن
+                </span>
+
+            </div>
+
+
+
+            <div class="details-info">
+
+                <div class="info-box">
+
+                    <span class="info-label">
+                        سال تولید
+                    </span>
+
+                    <span
+                        class="info-value"
+                        id="detailsYear">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span class="info-label">
+                        مدت / قسمت
+                    </span>
+
+                    <span
+                        class="info-value"
+                        id="detailsDuration">
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <h3 class="details-heading">
+                📝 درباره فیلم
+            </h3>
+
+            <p
+                class="details-text"
+                id="detailsDescription">
+                -
+            </p>
+
 
         </div>
 
-
-      </div>
-
-
-
-      <h3 class="details-heading">
-        📝 درباره فیلم
-      </h3>
-
-
-      <p
-        class="details-text"
-        id="detailsDescription"
-      >
-        توضیحات فیلم در این قسمت نمایش داده می‌شود.
-      </p>
-
-
     </div>
-
-  </div>
 
 </section>
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-  <strong>
-    کافی نت و لوازم تحریر نگار
-  </strong>
+    <strong>
+        کافی نت و لوازم تحریر نگار
+    </strong>
 
-  کاتالوگ معرفی فیلم‌های فروشگاه
+    کاتالوگ معرفی فیلم‌های فروشگاه
 
 </footer>
 
@@ -826,9 +769,8 @@ footer strong{
 
 <script>
 
-/* =========================
-   VARIABLES
-========================= */
+
+/* وضعیت فیلترها */
 
 let selectedSort = "all";
 let selectedType = "همه";
@@ -836,317 +778,319 @@ let selectedCountry = "همه";
 let selectedGenre = "همه";
 
 
+/* عناصر صفحه */
+
 const search =
-  document.getElementById("search");
+    document.getElementById("search");
 
 const moviesContainer =
-  document.getElementById("movies");
+    document.getElementById("movies");
 
 const noResult =
-  document.getElementById("noResult");
+    document.getElementById("noResult");
 
 const homePage =
-  document.getElementById("homePage");
+    document.getElementById("homePage");
 
 const detailsPage =
-  document.getElementById("detailsPage");
+    document.getElementById("detailsPage");
 
 const cards =
-  Array.from(
-    document.querySelectorAll(".movie-card")
-  );
+    Array.from(
+        document.querySelectorAll(".movie-card")
+    );
 
 
 
-/* =========================
-   FILTER
-========================= */
+/* فیلتر و مرتب‌سازی */
 
 function filterMovies(){
 
-  const text =
-    search.value
-      .toLowerCase()
-      .trim();
-
-  let visibleCards = [];
+    const searchText =
+        search.value
+            .toLowerCase()
+            .trim();
 
 
-  cards.forEach(card => {
-
-    const title =
-      card.dataset.title.toLowerCase();
-
-    const matchSearch =
-      title.includes(text);
-
-    const matchType =
-      selectedType === "همه" ||
-      card.dataset.type === selectedType;
-
-    const matchCountry =
-      selectedCountry === "همه" ||
-      card.dataset.country === selectedCountry;
-
-    const matchGenre =
-      selectedGenre === "همه" ||
-      card.dataset.genre === selectedGenre;
+    let visibleCards = [];
 
 
-    const show =
-      matchSearch &&
-      matchType &&
-      matchCountry &&
-      matchGenre;
+    cards.forEach(card => {
+
+        const title =
+            card.dataset.title
+                .toLowerCase();
 
 
-    if(show){
-
-      card.style.display = "block";
-
-      visibleCards.push(card);
-
-    }else{
-
-      card.style.display = "none";
-
-    }
-
-  });
+        const searchMatch =
+            title.includes(searchText);
 
 
+        const typeMatch =
+            selectedType === "همه" ||
+            card.dataset.type === selectedType;
 
-  /* ===== NEWEST ===== */
 
-  if(selectedSort === "newest"){
+        const countryMatch =
+            selectedCountry === "همه" ||
+            card.dataset.country === selectedCountry;
 
-    visibleCards.sort((a,b) => {
 
-      return (
-        new Date(b.dataset.added) -
-        new Date(a.dataset.added)
-      );
+        const genreMatch =
+            selectedGenre === "همه" ||
+            card.dataset.genre === selectedGenre;
+
+
+        const visible =
+            searchMatch &&
+            typeMatch &&
+            countryMatch &&
+            genreMatch;
+
+
+        card.style.display =
+            visible ? "" : "none";
+
+
+        if(visible){
+            visibleCards.push(card);
+        }
 
     });
 
 
-    visibleCards.forEach(card => {
+    /* جدیدترین‌ها */
 
-      moviesContainer.appendChild(card);
+    if(selectedSort === "newest"){
 
-    });
-
-  }
-
-
-  noResult.style.display =
-    visibleCards.length === 0
-      ? "block"
-      : "none";
-
-}
-
-
-
-/* =========================
-   FILTER BUTTONS
-========================= */
-
-function setupFilter(id, callback){
-
-  const buttons =
-    document.querySelectorAll(
-      "#" + id + " .filter-btn"
-    );
-
-
-  buttons.forEach(button => {
-
-    button.addEventListener(
-      "click",
-      function(){
-
-        buttons.forEach(btn => {
-
-          btn.classList.remove("active");
-
-        });
-
-
-        this.classList.add("active");
-
-
-        callback(
-          this.dataset.value
+        visibleCards.sort(
+            (a,b) =>
+                new Date(b.dataset.added) -
+                new Date(a.dataset.added)
         );
 
 
-        filterMovies();
+        visibleCards.forEach(card => {
 
-      }
-    );
+            moviesContainer.appendChild(card);
 
-  });
+        });
+
+    }
+
+
+    noResult.style.display =
+        visibleCards.length
+        ? "none"
+        : "block";
 
 }
 
 
 
-/* =========================
-   FILTER SETUP
-========================= */
+/* ساخت فیلتر */
+
+function setupFilter(
+    id,
+    callback
+){
+
+    const buttons =
+        document.querySelectorAll(
+            "#" + id + " .filter-btn"
+        );
+
+
+    buttons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                buttons.forEach(btn => {
+
+                    btn.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+                this.classList.add(
+                    "active"
+                );
+
+
+                callback(
+                    this.dataset.value
+                );
+
+
+                filterMovies();
+
+            }
+        );
+
+    });
+
+}
+
+
+
+/* فیلترها */
 
 setupFilter(
-  "sort",
-  value => {
-    selectedSort = value;
-  }
+    "sort",
+    value => {
+        selectedSort = value;
+    }
 );
 
 
 setupFilter(
-  "type",
-  value => {
-    selectedType = value;
-  }
+    "type",
+    value => {
+        selectedType = value;
+    }
 );
 
 
 setupFilter(
-  "country",
-  value => {
-    selectedCountry = value;
-  }
+    "country",
+    value => {
+        selectedCountry = value;
+    }
 );
 
 
 setupFilter(
-  "genre",
-  value => {
-    selectedGenre = value;
-  }
+    "genre",
+    value => {
+        selectedGenre = value;
+    }
 );
 
 
 
-/* =========================
-   SEARCH
-========================= */
+/* جستجو */
 
 search.addEventListener(
-  "input",
-  filterMovies
+    "input",
+    filterMovies
 );
 
 
 
-/* =========================
-   DETAILS
-========================= */
+/* جزئیات فیلم */
 
 document
-  .querySelectorAll(".details-btn")
-  .forEach(button => {
+    .querySelectorAll(".details-btn")
+    .forEach(button => {
 
-    button.addEventListener(
-      "click",
-      function(){
+        button.addEventListener(
+            "click",
+            function(){
 
-        const card =
-          this.closest(".movie-card");
-
-
-        document.getElementById(
-          "detailsTitle"
-        ).textContent =
-          card.dataset.title;
+                const card =
+                    this.closest(
+                        ".movie-card"
+                    );
 
 
-        document.getElementById(
-          "detailsType"
-        ).textContent =
-          card.dataset.type;
+                document.getElementById(
+                    "detailsTitle"
+                ).textContent =
+                    card.dataset.title;
 
 
-        document.getElementById(
-          "detailsCountry"
-        ).textContent =
-          card.dataset.country;
+                document.getElementById(
+                    "detailsType"
+                ).textContent =
+                    card.dataset.type;
 
 
-        document.getElementById(
-          "detailsGenre"
-        ).textContent =
-          card.dataset.genre;
+                document.getElementById(
+                    "detailsCountry"
+                ).textContent =
+                    card.dataset.country;
 
 
-        document.getElementById(
-          "detailsYear"
-        ).textContent =
-          card.dataset.year;
+                document.getElementById(
+                    "detailsGenre"
+                ).textContent =
+                    card.dataset.genre;
 
 
-        document.getElementById(
-          "detailsDuration"
-        ).textContent =
-          card.dataset.duration;
+                document.getElementById(
+                    "detailsYear"
+                ).textContent =
+                    card.dataset.year;
 
 
-        document.getElementById(
-          "detailsDescription"
-        ).textContent =
-          card.dataset.description;
+                document.getElementById(
+                    "detailsDuration"
+                ).textContent =
+                    card.dataset.duration;
 
 
-        const poster =
-          card.querySelector(".poster");
+                document.getElementById(
+                    "detailsDescription"
+                ).textContent =
+                    card.dataset.description;
 
 
-        document.getElementById(
-          "detailsPoster"
-        ).innerHTML =
-          poster.innerHTML;
+                document.getElementById(
+                    "detailsPoster"
+                ).innerHTML =
+                    card.querySelector(
+                        ".poster"
+                    ).innerHTML;
 
 
-        homePage.style.display =
-          "none";
+                homePage.style.display =
+                    "none";
 
 
-        detailsPage.style.display =
-          "block";
+                detailsPage.style.display =
+                    "block";
 
 
-        window.scrollTo(0,0);
+                window.scrollTo(
+                    0,
+                    0
+                );
 
-      }
+            }
+        );
+
+    });
+
+
+
+/* بازگشت */
+
+document
+    .getElementById("backButton")
+    .addEventListener(
+        "click",
+        function(){
+
+            detailsPage.style.display =
+                "none";
+
+
+            homePage.style.display =
+                "block";
+
+
+            window.scrollTo(
+                0,
+                0
+            );
+
+        }
     );
 
-  });
-
-
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-document
-  .getElementById("backButton")
-  .addEventListener(
-    "click",
-    function(){
-
-      detailsPage.style.display =
-        "none";
-
-
-      homePage.style.display =
-        "block";
-
-
-      window.scrollTo(0,0);
-
-    }
-  );
 
 
 /* اجرای اولیه */
